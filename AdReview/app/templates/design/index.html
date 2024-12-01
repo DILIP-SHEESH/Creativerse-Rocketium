@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Ad Review</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styling */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #1c1f3f, #4a90e2);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4);
+        }
+
+        form {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 1.1rem;
+            font-weight: 400;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        input[type="file"] {
+            margin: 10px 0 20px;
+            font-size: 1rem;
+            padding: 5px;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background: #57c7d4;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(87, 199, 212, 0.5);
+        }
+
+        button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(87, 199, 212, 0.7);
+        }
+
+        .result-section {
+            margin-top: 20px;
+            text-align: left;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .result-section h2 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .result-section p {
+            font-size: 1rem;
+            font-weight: 300;
+            line-height: 1.5;
+        }
+
+        .flash-messages {
+            list-style-type: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        .flash-messages li {
+            background-color: #ffcc00;  /* Example: Yellow background for messages */
+            color: #333;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Designer Ad Review</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <label for="image">Upload Ad Image:</label>
+            <input type="file" name="image" id="image" required>
+            <button type="submit">Upload</button>
+        </form>
+
+        <!-- Button to navigate to ongoing projects -->
+        <a href="{{ url_for('design.ongoing_projects') }}">
+            <button type="button">View Ongoing Projects</button>
+        </a>
+
+        {% if extracted_text %}
+        <div class="result-section">
+            <h2>Extracted Text:</h2>
+            <p>{{ extracted_text }}</p>
+        </div>
+
+        <div class="result-section">
+            <h2>Extracted Labels:</h2>
+            <p>{{ extracted_labels }}</p>
+        </div>
+
+        <div class="result-section">
+            <h2>Violation Check Result:</h2>
+            <p>{{ violation_result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
