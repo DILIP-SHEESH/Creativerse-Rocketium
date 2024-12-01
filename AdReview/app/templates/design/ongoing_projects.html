@@ -1,0 +1,22 @@
+<!-- ongoing_projects.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ongoing Projects</title>
+</head>
+<body>
+    <h1>Ongoing Projects</h1>
+
+    <div class="project-section">
+        <h2>Current Project</h2>
+        <p><strong>Project Requirements:</strong></p>
+        <div class="requirements-data">
+            <pre>{{ requirements_data }}</pre>
+        </div>
+    </div>
+
+    <a href="{{ url_for('company.company_view') }}">Back to Project Form</a>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Review</title>
+</head>
+<body>
+    <h1>Review the Generated Ad</h1>
+    <form action="/generate_review" method="POST">
+        <div>
+            <label for="ad_content">Generated Ad Content:</label>
+            <textarea name="ad_content" id="ad_content" rows="5" readonly>{{ ad_content }}</textarea>
+        </div>
+
+        <div>
+            <label for="generated_requirements">Generated Requirements:</label>
+            <textarea name="generated_requirements" id="generated_requirements" rows="5" readonly>{{ generated_requirements }}</textarea>
+        </div>
+
+        <button type="submit">Generate Review</button>
+    </form>
+
+    <br>
+    <a href="/">Go back</a>
+</body>
+</html>

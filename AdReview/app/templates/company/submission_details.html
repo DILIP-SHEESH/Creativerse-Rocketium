@@ -1,0 +1,231 @@
+<!--<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdVision - Submission Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #4a90e2, #1c1f3f);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header Styles */
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Submission Details Section */
+        .submission-details {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .submission-details p {
+            margin: 8px 0;
+        }
+
+        .submission-details strong {
+            color: #ff6f61;
+        }
+
+        pre {
+            text-align: left;
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+
+        .go-back {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #57c7d4;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .go-back:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AdVision - Submission Details</h1>
+            <p>Review your ad submission details below</p>
+        </header>
+
+        <main class="submission-details">
+            <p><strong>Project Name:</strong> {{ project_name }}</p>
+            <p><strong>Description:</strong> {{ description }}</p>
+            <p><strong>Ad for Platform:</strong> {{ ad_for_platform }}</p>
+            <p><strong>Ad Type:</strong> {{ ad_type }}</p>
+            <p><strong>Generated Ad Content:</strong></p>
+            <pre>{{ ad_content }}</pre>
+        </main>
+
+        <a href="{{ url_for('main.index') }}" class="go-back">Go Back</a>
+    </div>
+</body>
+</html>-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AdVision - Submission Details</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #4a90e2, #1c1f3f);
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 800px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Header Styles */
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        /* Submission Details Section */
+        .submission-details {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .submission-details p {
+            margin: 8px 0;
+        }
+
+        .submission-details strong {
+            color: #ff6f61;
+        }
+
+        pre {
+            text-align: left;
+            background: #333;
+            padding: 15px;
+            border-radius: 8px;
+            margin-top: 10px;
+            color: #fff;
+            font-size: 1rem;
+            overflow-x: auto;
+        }
+
+        .go-back {
+            display: inline-block;
+            padding: 12px 24px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: #fff;
+            background-color: #57c7d4;
+            text-decoration: none;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .go-back:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Flash Message Styles */
+        .flash-message {
+            background-color: #f9f9f9;
+            color: #333;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AdVision - Submission Details</h1>
+            <p>Review your ad submission details below</p>
+        </header>
+
+        <main class="submission-details">
+            <p><strong>Project Name:</strong> {{ project_name }}</p>
+            <p><strong>Description:</strong> {{ description }}</p>
+            <p><strong>Company Guidelines:</strong> Extracted from the Company Guidelines</p>
+            <p><strong>Ad for Platform:</strong> {{ ad_for_platform }}</p>
+            <p><strong>Platform Guidelines:</strong> Extracted from the Platform Guidelines</p>
+            <p><strong>Ad Type:</strong> {{ ad_type }}</p>
+        </main>
+    </div>
+</body>
+</html>
+
